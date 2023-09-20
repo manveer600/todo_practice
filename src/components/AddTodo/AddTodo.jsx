@@ -1,9 +1,10 @@
-import { useContext, useState } from "react";
-import TodoDispatchContext from "../TodoContext/TodoDispatchContext";
+import { useState } from "react";
+// import TodoDispatchContext from "../TodoContext/TodoDispatchContext";
 import { useDispatch } from "react-redux";
 function AddTodo(){
     // const {dispatch} = useContext(TodoDispatchContext)
     const dispatch = useDispatch();
+    
     const[input,setInput] = useState('');
     return <div>
         <input type="text" value={input} placeholder="Add todo..." onChange={(e)=>setInput(e.target.value)}></input>

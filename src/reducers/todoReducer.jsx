@@ -1,4 +1,5 @@
-function todoReducer(state=[],action){
+function todoReducer(state=["new"],action){
+    // console.log(state);
     if(action.type == 'add_todo'){
         let inputTodo = action.payload.inputTodo;
         return [...state,{id:state.length+1,todoData:inputTodo, finished:false}]
@@ -17,6 +18,7 @@ function todoReducer(state=[],action){
         let todo = action.payload.todo;
         const updatedList = state.filter((t)=> t.id != todo.id);
         return updatedList;
+
     }else if(action.type === "finish_todo"){
         let todo = action.payload.todo;
         let isFinished = action.payload.isFinished;
@@ -26,8 +28,11 @@ function todoReducer(state=[],action){
                 }
                 return t;
             })
+            console.log(updatedList);
             return updatedList;
     }
+
+    return [];
 }
 
 export default todoReducer;

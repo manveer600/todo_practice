@@ -5,6 +5,7 @@ import TodoList from "./components/TodoList/TodoList.jsx";
 // import todoReducer from "./reducers/todoReducer.jsx";
 // import TodoDispatchContext from "./components/TodoContext/TodoDispatchContext.jsx";
 function App() {
+  console.log("sorry paaji")
   // const [list,setList] = useState([
   //   {id:1, todoData:"todo1",finished:false},
   //   {id:2, todoData:"todo2",finished:false}
@@ -14,10 +15,14 @@ function App() {
   // console.log(list);
   // console.log(dispatch);
   return (
+    // <TodoContext.Provider value={{list}}>
+    //   <TodoDispatchContext.Provider value={{dispatch}}>
     <>
       <AddTodo></AddTodo>
       <TodoList />
     </>
+    //   </TodoDispatchContext.Provider>
+    // </TodoContext.Provider>
   );
 }
 
